@@ -10,6 +10,7 @@ namespace SpaDay.Controllers
 {
     public class SpaController : Controller
     {
+        
         public bool CheckSkinType(string skinType, string facialType)
         {
 
@@ -35,6 +36,7 @@ namespace SpaDay.Controllers
 
         public IActionResult Index()
         {
+            
             return View();
         }
 
@@ -42,6 +44,10 @@ namespace SpaDay.Controllers
         [Route("/spa")]
         public IActionResult Menu(string name, string skintype, string manipedi)
         {
+            ViewBag.names = name;
+            ViewBag.skintype = skintype;
+            
+            
             List<string> facials = new List<string>()
             {
                 "Microdermabrasion", "Hydrofacial", "Rejuvenating", "Enzyme Peel"
@@ -55,6 +61,13 @@ namespace SpaDay.Controllers
                     appropriateFacials.Add(facials[i]);
                 }
             }
+            ViewBag.face = appropriateFacials;
+
+            if (manipedi == "pedicure")
+            {
+                ViewBag.manipedi = "Relax for 45 minutes in pure luxury! Our massage chairs and experienced nail techs are here to get your feet in shape for sandal season!";
+            }
+
             return View();
         }
 

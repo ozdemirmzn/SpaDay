@@ -1,10 +1,11 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-<div id="clientProfile">
-</div>
+﻿
+
+
+
+    <div id="clientProfile">
+        <h3>Client Profile</h3>
+        <p>@ViewBag.names</p>
+    </div>
 <div id="servicesMenu">
 </div>
 
@@ -14,13 +15,18 @@
 <div id="servicesMenu">
 
     <h5>Facial Treatments</h5>
-    <p>Your //TODO: pass the skintype value in here// skin type is best suited to the follow facial types:</p>
-    
+    <p>Your @ViewBag.skintype skin type is best suited to the follow facial types:</p>
+
+
     <ul>
-        //TODO: iterate through appropriate facial treatments
+        @foreach (string faces in ViewBag.face)
+        {
+            <li>@faces</li>
+        }
     </ul>
 
     <h5>Nail Services</h5>
-    // TODO: display a description for the nail service selected
-    
+
+    <p>@ViewBag.manipedi</p>
+
 </div>

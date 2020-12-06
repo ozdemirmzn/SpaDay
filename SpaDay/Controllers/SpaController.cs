@@ -67,6 +67,14 @@ namespace SpaDay.Controllers
             {
                 ViewBag.manipedi = "Relax for 45 minutes in pure luxury! Our massage chairs and experienced nail techs are here to get your feet in shape for sandal season!";
             }
+            else if (manipedi == "manicure")
+            {
+                ViewBag.manipedi = "Manicure selected!";
+            }
+            else
+            {
+                ViewBag.manipedi = "Both selected!";
+            }
 
             return View();
         }
